@@ -1,0 +1,17 @@
+{% extends "./base.html" %}
+
+{% block body %}
+{% load static %}
+
+<form text align = center action="" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="username" id="" placeholder="Nombre de Usuario">
+    <br>
+    <input type="password" name="password" id="" placeholder="Contraseña">
+    <br>
+    <button type="submit">Iniciar Sesion</button>
+    <a  href="{% url 'index' %}">Volver al inicio</a>
+
+</form>
+{% endblock %}

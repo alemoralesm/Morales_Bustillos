@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Producto
 
+
 def carrito(request):
     producto = Producto.objects.all()
     return render(request, "carrito.html", {"producto": producto})
@@ -20,17 +21,22 @@ def form(request):
 def mapa(request):
     return render(request, 'mapa.html')
 
-
+def login(request):
+    return render(request, 'login.html')
 
 
 def registrarCarrito(request):
-    codigo = request.POST['txtCodigo']
-    nombre = request.POST['txtNombre']
-    precio = request.POST['numPrecio']
-    cantidad = request.POST['numCantidad']
+    if request.method == 'POST':
+        codigo = request.POST.get('txtCodigo')
+        nombre = request.POST.get('txtNombre')
+        precio = request.POST.get('numPrecio')
+        cantidad = request.POST.get('numCantidad')
 
-    producto = Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, cantidad=cantidad)
-    return redirect('/')
+        producto = Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, cantidad=cantidad)
+        return redirect('/')
+    else:
+        # Manejar caso cuando el método de solicitud no es POST
+        return redirect('/')
 
 def edicionCarrito(request, codigo):
     producto = Producto.objects.get(codigo=codigo)
@@ -55,3 +61,4 @@ def eliminarCarro(request, codigo):
     producto.delete()
 
     return redirect('/')
+

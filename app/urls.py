@@ -1,6 +1,6 @@
 from django.urls import path,include
 from django.db import models
-from .views import index, Nacionales, Internacionales, form, mapa, carrito, registrarCarrito
+from .views import index, Nacionales, Internacionales, form, mapa, carrito, registrarCarrito,login
 
 urlpatterns = [
     path('', index, name='index'),
@@ -10,7 +10,7 @@ urlpatterns = [
     path('mapa/', mapa, name='mapa'),
     path('carrito/', carrito, name='carrito'),
     path('registrarCarrito/', registrarCarrito, name='registrarCarrito'),
-
+    path('login/', login, name='login'),
 ]
 
 
