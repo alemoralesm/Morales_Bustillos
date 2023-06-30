@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Morales_Bustillos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/PRIMAL AQUA/Morales_Bustillos/app/templates/app'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
