@@ -1,0 +1,36 @@
+{% extends "./base.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar carro</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarCarrito/" method="post">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="txtCodigo" name="txtCodigo" value="{{producto.codigo}}" class="form-control" placeholder="Codigo" 
+                            minlength="3" maxlength="40" readonly required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" value="{{nombre.codigo}}" placeholder="Nombre" 
+                            maxlength="40" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="numPrecio" name="numPrecio" class="form-control " value="{{precio.codigo}}" placeholder="Precio" 
+                            minlength="1" maxlength="9"  required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="numCantidad" name="numCantidad" class="form-control" value="{{cantidad.codigo}}" placeholder="Cantidad" 
+                             maxlength="9"required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
