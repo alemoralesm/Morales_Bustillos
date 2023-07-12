@@ -22,8 +22,8 @@ def form(request):
 def mapa(request):
     return render(request, 'mapa.html')
 
-def login(request):
-    return render(request, 'login.html')
+def productos(request):
+    return render(request, 'productos.html')
 
 
 def registrarCarrito(request):

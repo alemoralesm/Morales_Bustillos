@@ -1,14 +1,49 @@
-{% extends "base.html" %}
+{% extends "./base.html" %}
 
-{% block content %}
+{% block body %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
+    <link rel="icon" href="{% static 'img/Desktop Screenshot 2023.04.03 - 12.34.50.44.png' %}">
+    <link rel="stylesheet" href="{% static 'css/productos.css' %}">
+
 </head>
 <body>
-    
+
+    <header id="header">
+        <img class="carrito" src="{% static 'img/carrito.png' %}" alt="carrito">
+    </header>
+    <div id="contenedor" class="contenedor">
+        <div>
+            <img src="{% static 'img/rev1.png' %}" alt="producto 1">
+            <div class="informacion">
+                <p>VOGUE</p>
+                <p class="precio">$4990<span></span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static 'img/rev2.png' %}" alt="producto 2">
+            <div class="informacion">
+                <p>VANITY FAIR</p>                   
+                <p class="precio">$4499<span></span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static 'img/rev3.png' %}" alt="producto 3">
+            <div class="informacion">
+                <p>ELLE MAGAZINE</p>                   
+                <p class="precio">$5990<span></span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    <div>
+    <script src="{% static 'app.js' %}"></script>
 </body>
 </html>
+{% endblock %}
