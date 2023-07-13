@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/carrito.css' %}">
 <div class="row py-2">
     <div class="col-sm-12 col-md-6 col-lg-4 colo-xl-4">
-        <h2>Añadir al carrito</h2>
+        <h2>Añadir stock</h2>
         <div class="card">
             <div class="card-body">
                 <form action="/registrarCarrito/" method="post">{% csrf_token %}
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 colo-xl-4">
-        <h1>Carrito</h1>
+        <h1>Revistas</h1>
         <div class="table-responsive py-2">
             <table class="table table-striped">
                 <thead>               
